@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
                 child: Padding(
                 padding: EdgeInsets.all(20),
                 child: Column(
-                  children: [
+                  children: const[
                     RichText(text: TextSpan(
                       text: 
                     ))
