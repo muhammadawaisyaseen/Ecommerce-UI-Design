@@ -1,3 +1,4 @@
+import 'package:e_commerce_ui/screens/products_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -85,26 +86,34 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(
                         height: 20,
                       ),
-                      // Pink Button Join us
+                      // Join us to Purchase Button
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 1,
-                          height: 70,
-                          decoration: BoxDecoration(
-                              gradient: const LinearGradient(colors: [
-                                Color(0xFFf34351),
-                                Color(0xFFfd4553)
-                              ]),
-                              borderRadius: BorderRadius.circular(50)),
-                          child: const Padding(
-                            padding: EdgeInsets.symmetric(vertical: 25),
-                            child: Text(
-                              'Join us to Purchase',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (context) => ProductsPage(),
+                              
+                            ));
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 1,
+                            height: 70,
+                            decoration: BoxDecoration(
+                                gradient: const LinearGradient(colors: [
+                                  Color(0xFFf34351),
+                                  Color(0xFFfd4553)
+                                ]),
+                                borderRadius: BorderRadius.circular(50)),
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 25),
+                              child: Text(
+                                'Join us to Purchase',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ),
                         ),
