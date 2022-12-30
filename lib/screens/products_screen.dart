@@ -22,7 +22,6 @@ class ProductsPage extends StatelessWidget {
                     borderRadius:
                         BorderRadius.only(bottomLeft: Radius.circular(90))),
               ),
-
               //2nd Child
 
               Container(
