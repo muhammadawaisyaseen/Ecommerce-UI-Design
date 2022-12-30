@@ -11,6 +11,10 @@ class ProductsPage extends StatelessWidget {
       child: DefaultTabController(
         length: 3,
         child: Scaffold(
+          bottomNavigationBar: BottomNavigationBar(currentIndex: 0, items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          ]),
           body: Container(
             color: Colors.white,
             child: Column(
@@ -99,40 +103,78 @@ class ProductsPage extends StatelessWidget {
                         width: 350,
                         height: 60,
                         decoration: BoxDecoration(
-                            color: Color(0xFF282d54),
+                            color: const Color(0xFF282d54),
                             borderRadius: BorderRadius.circular(16)),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: TabBar(
                               indicator: BoxDecoration(
                                   borderRadius: BorderRadius.circular(16),
-                                  color: Color(0xFF1b1e3f)),
-                              tabs: [
+                                  color: const Color(0xFF1b1e3f)),
+                              tabs: const [
                                 Text('Colleagues'),
                                 Text('Collection'),
                                 Text('My Award')
                               ]),
                         ),
-                      )
+                      ),
+                      // TabBarView(children: children)
                     ],
                   ),
                 ),
-                //2nd Child
 
+                //2nd Child
                 Container(
                   width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.71,
+                  height: MediaQuery.of(context).size.height * 0.645,
                   decoration: const BoxDecoration(
                     color: Color(0xFF1a1e3f),
                   ),
                   child: Container(
-                    width: double.infinity,
-                    height: MediaQuery.of(context).size.height * 0.71,
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius:
-                            BorderRadius.only(topRight: Radius.circular(90))),
-                  ),
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.645,
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius:
+                              BorderRadius.only(topRight: Radius.circular(90))),
+                      child: TabBarView(children: [
+                            Container(
+                              color: Colors.red,
+                            ),
+                            Container(
+                              color: Colors.green,
+                            ),
+                            Container(
+                              color: Colors.blue,
+                            )
+                          ]),
+                      // Column(
+                      //   crossAxisAlignment: CrossAxisAlignment.start,
+                      //   children: [
+                      //     Padding(
+                      //       padding: const EdgeInsets.only(left: 24, top: 40),
+                      //       child: Text(
+                      //         'Collection',
+                      //         style: TextStyle(
+                      //             color: Colors.black,
+                      //             fontWeight: FontWeight.bold,
+                      //             fontSize: 16),
+                      //       ),
+                      //     ),
+                          // TabBarView(children: [
+                          //   Container(
+                          //     color: Colors.red,
+                          //   ),
+                          //   Container(
+                          //     color: Colors.green,
+                          //   ),
+                          //   Container(
+                          //     color: Colors.blue,
+                          //   )
+                          // ]),
+                      //   ],
+                      // ),
+                      ),
                 ),
               ],
             ),
