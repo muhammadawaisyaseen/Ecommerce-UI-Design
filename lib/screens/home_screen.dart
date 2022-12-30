@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Container(
               height: MediaQuery.of(context).size.height * 0.5,
+              width: MediaQuery.of(context).size.width * 1,
               decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       colors: [Color(0xFFe7e7e7), Color(0xFFffffff)],
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
                 height: MediaQuery.of(context).size.height * 0.5,
+                width: MediaQuery.of(context).size.width * 1,
                 decoration: const BoxDecoration(
                     gradient: LinearGradient(
                         colors: [Color(0xFFe7e7e7), Color(0xFFffffff)],
