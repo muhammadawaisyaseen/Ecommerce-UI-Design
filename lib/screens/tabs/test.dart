@@ -14,9 +14,8 @@ class TestTab extends StatelessWidget {
       child: GridView.builder(
         itemCount: 11,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisExtent: 200,
-            
-            crossAxisCount: 3,
+            mainAxisExtent: 250,
+            crossAxisCount: 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10),
         itemBuilder: (context, index) {
@@ -27,7 +26,45 @@ class TestTab extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Text('Awais'),
+                //product and fav icon
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      borderRadius: BorderRadius.circular(10)),
+                  width: double.infinity,
+                  height: 170, // (mainAxisExtent: 200 Total height of gridtile)
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 14, top: 16),
+                        child: Container(
+                          width: 25,
+                          height: 25,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.favorite,
+                            color: Color(0xFFf06e51),
+                          ),
+                        ),
+                      ),
+                      Center(
+                        child: Image.asset(
+                          'assets/images/shirt.png',
+                          width: double.infinity,
+                          height: 120,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                //price and Name
+                // Container()
               ],
             ),
           );
