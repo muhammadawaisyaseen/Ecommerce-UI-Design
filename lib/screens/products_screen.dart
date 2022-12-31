@@ -1,3 +1,7 @@
+import 'package:e_commerce_ui/screens/tabs/colleagues_tab.dart';
+import 'package:e_commerce_ui/screens/tabs/collection_tab.dart';
+import 'package:e_commerce_ui/screens/tabs/myaward_tab.dart';
+import 'package:e_commerce_ui/screens/tabs/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -18,6 +22,7 @@ class ProductsPage extends StatelessWidget {
           body: Container(
             color: Colors.white,
             child: Column(
+              // mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 // 1st Child
                 Container(
@@ -131,50 +136,36 @@ class ProductsPage extends StatelessWidget {
                     color: Color(0xFF1a1e3f),
                   ),
                   child: Container(
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height * 0.645,
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius:
-                              BorderRadius.only(topRight: Radius.circular(90))),
-                      child: TabBarView(children: [
-                            Container(
-                              color: Colors.red,
-                            ),
-                            Container(
-                              color: Colors.green,
-                            ),
-                            Container(
-                              color: Colors.blue,
-                            )
+                    width: double.infinity,
+                    height: MediaQuery.of(context).size.height * 0.645,
+                    decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius:
+                            BorderRadius.only(topRight: Radius.circular(90))),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.only(left: 24, top: 50),
+                          child: Text(
+                            'Collection',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16),
+                          ),
+                        ),
+                        Expanded(
+                          child: TabBarView(children: [
+                            TestTab(),
+                            CollectionTab(),
+                            MyAwardTab(),
                           ]),
-                      // Column(
-                      //   crossAxisAlignment: CrossAxisAlignment.start,
-                      //   children: [
-                      //     Padding(
-                      //       padding: const EdgeInsets.only(left: 24, top: 40),
-                      //       child: Text(
-                      //         'Collection',
-                      //         style: TextStyle(
-                      //             color: Colors.black,
-                      //             fontWeight: FontWeight.bold,
-                      //             fontSize: 16),
-                      //       ),
-                      //     ),
-                          // TabBarView(children: [
-                          //   Container(
-                          //     color: Colors.red,
-                          //   ),
-                          //   Container(
-                          //     color: Colors.green,
-                          //   ),
-                          //   Container(
-                          //     color: Colors.blue,
-                          //   )
-                          // ]),
-                      //   ],
-                      // ),
-                      ),
+                        ),
+                        
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
