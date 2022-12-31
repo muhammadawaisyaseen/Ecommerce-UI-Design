@@ -14,14 +14,22 @@ class TestTab extends StatelessWidget {
       child: GridView.builder(
         itemCount: 11,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, crossAxisSpacing: 10, mainAxisSpacing: 10),
+            mainAxisExtent: 200,
+            
+            crossAxisCount: 3,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10),
         itemBuilder: (context, index) {
           return Container(
             decoration: BoxDecoration(
               color: Colors.pink[400],
               borderRadius: BorderRadius.circular(10),
             ),
-            
+            child: Column(
+              children: [
+                Text('Awais'),
+              ],
+            ),
           );
         },
       ),
