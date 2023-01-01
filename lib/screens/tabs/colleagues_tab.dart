@@ -15,7 +15,7 @@ class ColleagueTab extends StatelessWidget {
     Color.fromARGB(255, 194, 210, 208),
     Color.fromARGB(139, 229, 232, 238),
   ];
-  
+
   List<String> productPhoto = [
     'assets/images/shirt.png',
     'assets/images/pent.png',
@@ -24,6 +24,7 @@ class ColleagueTab extends StatelessWidget {
     'assets/images/shalwar kameez.png',
     'assets/images/sharwani.png'
   ];
+  
   List<String> productName = [
     'Half sleaves t-shirt',
     'Men jeans Pent',
