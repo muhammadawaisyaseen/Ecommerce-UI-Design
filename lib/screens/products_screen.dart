@@ -150,19 +150,18 @@ class ProductsPage extends StatelessWidget {
                           child: Text(
                             'Collection',
                             style: TextStyle(
-                                color: Colors.black,
+                                color: Color(0xFF5b5c74),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16),
                           ),
                         ),
                         Expanded(
                           child: TabBarView(children: [
-                            TestTab(),
+                            ColleagueTab(),
                             CollectionTab(),
                             MyAwardTab(),
                           ]),
                         ),
-                        
                       ],
                     ),
                   ),

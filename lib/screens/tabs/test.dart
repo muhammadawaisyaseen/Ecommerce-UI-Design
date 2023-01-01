@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-// import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class TestTab extends StatelessWidget {
   const TestTab({super.key});
@@ -13,7 +13,7 @@ class TestTab extends StatelessWidget {
       padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
       child: GridView.builder(
         itemCount: 11,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             mainAxisExtent: 250,
             crossAxisCount: 2,
             crossAxisSpacing: 10,
@@ -21,18 +21,20 @@ class TestTab extends StatelessWidget {
         itemBuilder: (context, index) {
           return Container(
             decoration: BoxDecoration(
-              color: Colors.pink[400],
+              color: Colors.white,
+              // color: Colors.grey[300],
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //product and fav icon
                 Container(
                   decoration: BoxDecoration(
-                      color: Colors.yellow,
+                      color: Colors.pink[200],
                       borderRadius: BorderRadius.circular(10)),
                   width: double.infinity,
-                  height: 170, // (mainAxisExtent: 200 Total height of gridtile)
+                  height: 180, // (mainAxisExtent: 200 Total height of gridtile)
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
@@ -41,11 +43,11 @@ class TestTab extends StatelessWidget {
                         child: Container(
                           width: 25,
                           height: 25,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                             shape: BoxShape.circle,
                           ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.favorite,
                             color: Color(0xFFf06e51),
                           ),
@@ -64,7 +66,32 @@ class TestTab extends StatelessWidget {
                 ),
 
                 //price and Name
-                // Container()
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  'Half sleaves t-Shirt',
+                  style: TextStyle(
+                      color: Colors.black54,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15),
+                ),
+                const SizedBox(
+                  height: 4,
+                ),
+                RichText(
+                    text: const TextSpan(
+                        style: TextStyle(color: Colors.grey, fontSize: 14),
+                        children: [
+                      TextSpan(
+                          text: "Rs.887", style: TextStyle(color: Colors.pink)),
+                      TextSpan(
+                        text: '  ',
+                      ),
+                      TextSpan(
+                        text: '20% off',
+                      ),
+                    ])),
               ],
             ),
           );
