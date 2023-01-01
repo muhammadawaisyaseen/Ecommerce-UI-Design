@@ -6,6 +6,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class ColleagueTab extends StatelessWidget {
   ColleagueTab({super.key});
+
   List<Color> tileColor = [
     Color(0xFFffeee6),
     Color(0xFFeafffc),
@@ -14,6 +15,7 @@ class ColleagueTab extends StatelessWidget {
     Color.fromARGB(255, 194, 210, 208),
     Color.fromARGB(139, 229, 232, 238),
   ];
+  
   List<String> productPhoto = [
     'assets/images/shirt.png',
     'assets/images/pent.png',
