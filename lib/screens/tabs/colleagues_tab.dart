@@ -24,7 +24,7 @@ class ColleagueTab extends StatelessWidget {
     'assets/images/shalwar kameez.png',
     'assets/images/sharwani.png'
   ];
-  
+
   List<String> productName = [
     'Half sleaves t-shirt',
     'Men jeans Pent',
@@ -33,6 +33,7 @@ class ColleagueTab extends StatelessWidget {
     'Men white shalwar kameez',
     'Marriage sharwani'
   ];
+  
   List<int> productPrice = [
     130,
     270,
