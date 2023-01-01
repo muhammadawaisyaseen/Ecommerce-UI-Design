@@ -6,7 +6,6 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class ColleagueTab extends StatelessWidget {
   ColleagueTab({super.key});
-
   List<Color> tileColor = [
     Color(0xFFffeee6),
     Color(0xFFeafffc),
