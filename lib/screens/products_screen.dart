@@ -15,6 +15,7 @@ class ProductsPage extends StatelessWidget {
       child: DefaultTabController(
         length: 3,
         child: Scaffold(
+          
           bottomNavigationBar: BottomNavigationBar(currentIndex: 0, items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
