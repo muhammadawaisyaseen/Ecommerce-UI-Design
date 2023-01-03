@@ -1,7 +1,7 @@
 import 'package:e_commerce_ui/screens/tabs/colleagues_tab.dart';
 import 'package:e_commerce_ui/screens/tabs/collection_tab.dart';
 import 'package:e_commerce_ui/screens/tabs/myaward_tab.dart';
-import 'package:e_commerce_ui/screens/tabs/test.dart';
+// import 'package:e_commerce_ui/screens/tabs/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -15,12 +15,12 @@ class ProductsPage extends StatelessWidget {
       child: DefaultTabController(
         length: 3,
         child: Scaffold(
-          
-          bottomNavigationBar: BottomNavigationBar(currentIndex: 0, items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-          ]),
+          // bottomNavigationBar: BottomNavigationBar(currentIndex: 0, items: [
+          //   BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          //   BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          // ]),
           body: Container(
+            // color: Colors.blue[200],
             color: Colors.white,
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.start,
@@ -130,40 +130,87 @@ class ProductsPage extends StatelessWidget {
                 ),
 
                 //2nd Child
-                Container(
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.645,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF1a1e3f),
-                  ),
+                Expanded(
                   child: Container(
                     width: double.infinity,
-                    height: MediaQuery.of(context).size.height * 0.645,
+                    // height: MediaQuery.of(context).size.height * 0.711,
                     decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius:
-                            BorderRadius.only(topRight: Radius.circular(90))),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(left: 24, top: 50),
-                          child: Text(
-                            'Collection',
-                            style: TextStyle(
-                                color: Color(0xFF5b5c74),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16),
+                      color: Color(0xFF1a1e3f),
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      // height: MediaQuery.of(context).size.height * 0.645,
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius:
+                              BorderRadius.only(topRight: Radius.circular(90))),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.only(left: 24, top: 50),
+                            child: Text(
+                              'Collection',
+                              style: TextStyle(
+                                  color: Color(0xFF5b5c74),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          child: TabBarView(children: [
-                            ColleagueTab(),
-                            CollectionTab(),
-                            MyAwardTab(),
-                          ]),
-                        ),
-                      ],
+                          Expanded(
+                            child: TabBarView(children: [
+                              ColleagueTab(),
+                              CollectionTab(),
+                              MyAwardTab(),
+                            ]),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * 1,
+                            height: kBottomNavigationBarHeight,
+                            child: Card(
+                                elevation: 10,
+                                color: Colors.white,
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 20),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      const Text(
+                                        'See more',
+                                        style: TextStyle(
+                                            color: Color(0xFFff9ea9),
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      const SizedBox(
+                                        width: 3,
+                                      ),
+                                      const Icon(
+                                        Icons.arrow_forward_ios_outlined,
+                                        color: Color(0xFFff9ea9),
+                                        size: 12,
+                                      ),
+                                      const Spacer(),
+                                      Container(
+                                        width: 30,
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                            color: Color(0xFFff4756),
+                                            borderRadius:
+                                                BorderRadius.circular(4)),
+                                        child: const Icon(
+                                          Icons.shopping_bag,
+                                          color: Colors.white,
+                                          size: 20,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                )),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

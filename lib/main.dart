@@ -1,6 +1,10 @@
 import 'package:e_commerce_ui/screens/home_screen.dart';
+import 'package:e_commerce_ui/screens/product_detail_screen.dart';
 import 'package:e_commerce_ui/screens/products_screen.dart';
+import 'package:e_commerce_ui/screens/temp_home.dart';
 import 'package:flutter/material.dart';
+// import 'dart:html';
+import 'dart:io';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ProductsPage(),
+      home: ProductDetailPage(),
     );
   }
 }
