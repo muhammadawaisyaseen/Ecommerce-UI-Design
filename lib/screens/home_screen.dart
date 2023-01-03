@@ -32,7 +32,9 @@ class _HomePageState extends State<HomePage> {
                       stops: [0.3, 0.9]),
                   borderRadius:
                       BorderRadius.only(bottomRight: Radius.circular(80))),
-              child: Image.asset('assets/images/homephoto.png',),
+              child: Image.asset(
+                'assets/images/homephoto.png',
+              ),
             ),
             Container(
                 height: MediaQuery.of(context).size.height * 0.5,
@@ -81,8 +83,7 @@ class _HomePageState extends State<HomePage> {
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.normal)),
-                            ])
-                            ),
+                            ])),
                       ),
                       const SizedBox(
                         height: 20,
@@ -92,10 +93,11 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: InkWell(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) => ProductsPage(),
-                              
-                            ));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ProductsPage(),
+                                ));
                           },
                           child: Container(
                             width: MediaQuery.of(context).size.width * 1,

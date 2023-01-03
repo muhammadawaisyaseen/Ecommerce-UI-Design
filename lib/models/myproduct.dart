@@ -17,7 +17,7 @@ List<Product> productsList = [
   Product(
       imageUrl: 'assets/images/shirt.png',
       name: 'Half sleaves t-shirt',
-      price: 130.toString(),
+      price: 290.toString(),
       discount: 170.toString()),
   Product(
       imageUrl: 'assets/images/pent.png',

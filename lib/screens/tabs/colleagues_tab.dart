@@ -74,7 +74,7 @@ class ColleagueTab extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ProductDetailPage(),
+                    builder: (context) => ProductDetailPage(obj: product),
                   ));
             },
             child: Container(
@@ -145,7 +145,9 @@ class ColleagueTab extends StatelessWidget {
                         TextSpan(
                             // Text('Indian currency is ${currency}');
                             text: '\$ ${product.price.toString()}',
-                            style: const TextStyle(color: Colors.pink)),
+                            style: const TextStyle(
+                                color: Colors.pink,
+                                fontWeight: FontWeight.bold)),
                         const TextSpan(
                           text: '   ',
                         ),

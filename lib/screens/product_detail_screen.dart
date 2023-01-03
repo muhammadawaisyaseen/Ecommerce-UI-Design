@@ -5,9 +5,9 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class ProductDetailPage extends StatelessWidget {
-  ProductDetailPage({super.key});
+  ProductDetailPage({required this.obj, super.key});
 
-  // final Product obj;
+  final Product obj;
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +33,11 @@ class ProductDetailPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    //Menu Row
                     Padding(
                       padding: const EdgeInsets.all(25),
                       child: Container(
-                        color: Colors.yellow,
+                        // color: Colors.yellow,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -68,11 +69,12 @@ class ProductDetailPage extends StatelessWidget {
                       ),
                     ),
                     /////////////
-                    SizedBox(
+                    const SizedBox(
                       height: 24,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(25),
+                      padding:
+                          const EdgeInsets.only(left: 25, top: 25, bottom: 25),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -81,17 +83,19 @@ class ProductDetailPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RichText(
-                                  text: const TextSpan(
-                                      style: TextStyle(
+                                  text: TextSpan(
+                                      style: const TextStyle(
                                           color: Color(0xFF1a1e3f),
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20),
                                       children: [
-                                    TextSpan(text: 'T-shirt'),
-                                    TextSpan(text: '\n\n'),
+                                    // TextSpan(text: 'T-shirt'),
+                                    TextSpan(text: obj.name),
+                                    const TextSpan(text: '\n\n'),
                                     TextSpan(
-                                        text: '75.00',
-                                        style: TextStyle(
+                                        // text: '75.00',
+                                        text: obj.price,
+                                        style: const TextStyle(
                                             color: Colors.red,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 30))
@@ -99,16 +103,19 @@ class ProductDetailPage extends StatelessWidget {
                               const SizedBox(
                                 height: 30,
                               ),
-                              RectangleWidget(txt: 'Price', number: '75.00'),
-                              SizedBox(
+                              // RectangleWidget(txt: 'Price', number: '75.00'),
+                              RectangleWidget(txt: 'Price', number: obj.price),
+                              const SizedBox(
                                 height: 20,
                               ),
-                              RectangleWidget(txt: 'Discount', number: '30.00'),
-                              SizedBox(
+                              // RectangleWidget(txt: 'Discount', number: '30.00'),
+                              RectangleWidget(
+                                  txt: 'Discount', number: obj.discount),
+                              const SizedBox(
                                 height: 20,
                               ),
                               Container(
-                                width: 140,
+                                width: 150,
                                 height: 80,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
@@ -125,8 +132,8 @@ class ProductDetailPage extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       RichText(
-                                          text: const TextSpan(
-                                              style: TextStyle(
+                                          text: TextSpan(
+                                              style: const TextStyle(
                                                   color: Colors.grey,
                                                   fontSize: 14),
                                               children: [
@@ -134,8 +141,9 @@ class ProductDetailPage extends StatelessWidget {
                                             TextSpan(text: '\n'),
                                             TextSpan(
                                                 text:
-                                                    'Cotton T- shirt for mens',
-                                                style: TextStyle(
+                                                    // 'Cotton T- shirt for mens',
+                                                    obj.name,
+                                                style: const TextStyle(
                                                     color: Color(0xFF1a1e3f),
                                                     fontSize: 16,
                                                     fontWeight:
@@ -148,23 +156,33 @@ class ProductDetailPage extends StatelessWidget {
                             ],
                           ),
                           // Image Displayed
-                          Spacer(),
-
-                          Container(
-                              width: 200,
-                              height: 400,
-                              color: Colors.pink,
-                              child: Image.asset('assets/images/sharwani.png'))
+                          // Spacer(),
+                          Image.asset(
+                            // 'assets/images/sharwani.png'
+                            obj.imageUrl,
+                            width: 120,
+                            height: 400,
+                          )
                         ],
                       ),
                     ),
 
                     // Last Description
-                    RichText(text: TextSpan(
-                      children: [
-                        TextSpan()
-                      ]
-                    )),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: RichText(
+                          text: TextSpan(
+                              style:
+                                  TextStyle(color: Colors.grey, fontSize: 14),
+                              children: [
+                            TextSpan(text: 'DESCRIPTION'),
+                            TextSpan(text: '\n\n'),
+                            TextSpan(
+                                text:
+                                    'Our all products are good and graceful. If you are\n interested, please buy our product and enjoy the life \nThis brand is the best choice for you!',
+                                style: TextStyle(color: Colors.black54)),
+                          ])),
+                    ),
                   ],
                 ),
               ),
@@ -184,6 +202,51 @@ class ProductDetailPage extends StatelessWidget {
                           color: Color(0xFF1a1e3f),
                           borderRadius:
                               BorderRadius.only(topLeft: Radius.circular(60))),
+                      // Add to Cart Button
+                      child: UnconstrainedBox(
+                        child: Container(
+                          // width: MediaQuery.of(context).size.width * 1,
+                          width: 340,
+                          height: 60,
+                          decoration: BoxDecoration(
+                              gradient: const LinearGradient(colors: [
+                                Color(0xFFf34351),
+                                Color(0xFFfd4553)
+                              ]),
+                              borderRadius: BorderRadius.circular(12)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 25, vertical: 18),
+                                child: Text(
+                                  'Add To Cart',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              const Spacer(),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                      color: Color(0xFFff7884),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  child: const Icon(
+                                    Icons.arrow_forward_ios_outlined,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
                     )),
               )
             ],
