@@ -94,7 +94,7 @@ class ProductDetailPage extends StatelessWidget {
                                     const TextSpan(text: '\n\n'),
                                     TextSpan(
                                         // text: '75.00',
-                                        text: obj.price,
+                                        text: '\$${obj.price}',
                                         style: const TextStyle(
                                             color: Colors.red,
                                             fontWeight: FontWeight.bold,
