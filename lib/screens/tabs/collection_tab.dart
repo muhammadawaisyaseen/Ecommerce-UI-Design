@@ -19,13 +19,13 @@ class CollectionTab extends StatelessWidget {
       child: StaggeredGridView.countBuilder(
         staggeredTileBuilder: (index) =>
             StaggeredTile.count(3, index.isEven ? 5.3 : 4),
-        itemCount: productsList.length,
+        itemCount: productsList().length,
         crossAxisCount: 6,
         crossAxisSpacing: 12,
         mainAxisSpacing: 14,
         itemBuilder: (context, index) {
-          Product product = productsList[index];
-          return MyProductTile(product: productsList[index], tileIndex: index);
+          // Product product = productsList[index];
+          return MyProductTile(tileIndex: index);
         },
       ),
     );

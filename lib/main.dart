@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 // import 'dart:html';
 import 'dart:io';
 
+import 'screens/wesy_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
