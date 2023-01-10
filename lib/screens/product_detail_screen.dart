@@ -1,8 +1,6 @@
 import 'package:e_commerce_ui/models/myproduct.dart';
 import 'package:e_commerce_ui/widgets/custom_rectangle.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ProductDetailPage extends StatelessWidget {
   ProductDetailPage({required this.obj, super.key});

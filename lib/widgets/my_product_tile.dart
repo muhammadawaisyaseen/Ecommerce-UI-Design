@@ -3,8 +3,9 @@ import 'package:e_commerce_ui/screens/product_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyProductTile extends StatelessWidget {
-  MyProductTile({required this.tileIndex, super.key});
+  MyProductTile({required this.tileIndex,required this.p, super.key});
 
+  Product p; 
   int tileIndex;
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class MyProductTile extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) =>
-                  ProductDetailPage(obj: productsList()[tileIndex]),
+                  ProductDetailPage(obj: p),
             ));
       },
       child: Column(
@@ -23,7 +24,7 @@ class MyProductTile extends StatelessWidget {
           //productsList[tileIndex] and fav icon
           Container(
             decoration: BoxDecoration(
-                color: productsList()[tileIndex].color,
+                color: p.color,
                 borderRadius: BorderRadius.circular(10)),
             width: double.infinity,
             height: tileIndex.isEven ? 270 : 200,
@@ -50,7 +51,7 @@ class MyProductTile extends StatelessWidget {
                   child: Center(
                     child: Image.asset(
                       // 'assets/images/pent.png',
-                      productsList()[tileIndex].imageUrl,
+                      p.imageUrl,
                       // width: double.infinity,
                       // height: tileIndex.isOdd ? 130 : 200,
                       fit: BoxFit.fill,
@@ -65,7 +66,7 @@ class MyProductTile extends StatelessWidget {
 
           Spacer(),
           Text(
-            productsList()[tileIndex].name,
+            p.name,
             style: const TextStyle(
                 color: Colors.black54,
                 fontWeight: FontWeight.bold,
@@ -80,7 +81,7 @@ class MyProductTile extends StatelessWidget {
                   children: [
                 TextSpan(
                     // Text('Indian currency is ${currency}');
-                    text: '\$ ${productsList()[tileIndex].price.toString()}',
+                    text: '\$ ${p.price.toString()}',
                     style: const TextStyle(
                         color: Colors.pink, fontWeight: FontWeight.bold)),
                 const TextSpan(
@@ -88,7 +89,7 @@ class MyProductTile extends StatelessWidget {
                 ),
                 TextSpan(
                     // text: '20.32',
-                    text: productsList()[tileIndex].discount.toString(),
+                    text: p.discount.toString(),
                     style: TextStyle(decoration: TextDecoration.lineThrough)),
               ])),
           ///////////////////////

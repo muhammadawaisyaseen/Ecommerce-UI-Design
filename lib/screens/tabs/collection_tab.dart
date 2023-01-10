@@ -1,17 +1,14 @@
 import 'package:e_commerce_ui/models/myproduct.dart';
-import 'package:e_commerce_ui/screens/my_product_tile.dart';
-import 'package:e_commerce_ui/screens/product_detail_screen.dart';
+import 'package:e_commerce_ui/widgets/my_product_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 // import 'dart:html';
 import 'dart:io';
 
 class CollectionTab extends StatelessWidget {
   CollectionTab({super.key});
-
+  List<Product> list = productsList();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,8 +21,8 @@ class CollectionTab extends StatelessWidget {
         crossAxisSpacing: 12,
         mainAxisSpacing: 14,
         itemBuilder: (context, index) {
-          // Product product = productsList[index];
-          return MyProductTile(tileIndex: index);
+          Product product = list[index];
+          return MyProductTile(p: product, tileIndex: index);
         },
       ),
     );
